@@ -1,1 +1,22 @@
-<p>profile works!</p>
+<div class="container">
+  <div *ngIf="userProfile">
+    <img class="mx-auto" src="{{ userProfile.avatar_url }}" alt="" width="100" height="100">
+    <ul class="list-group">
+      <li class="list-group-item">{{ userProfile.name }}</li>
+      <li class="list-group-item">{{ userProfile.login }}</li>
+      <li class="list-group-item">Joined: {{ userProfile.created_at }}</li>
+      <li class="list-group-item">{{ userProfile.location }}</li>
+      <li class="list-group-item">Followers: {{ userProfile.followers }} Following {{ userProfile.following }}</li>
+      <li class="list-group-item" *ngIf="userProfile.company">{{ userProfile.company }}</li>
+    </ul>
+  </div>
+
+  <div *ngFor="let repo of repos">
+    <div class="card">
+        <div class="card-body">
+            <h3></h3>
+            <p></p>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:700|Roboto+Mono&display=swap');
+
+body{
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+}
