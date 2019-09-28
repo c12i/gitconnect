@@ -21,7 +21,7 @@
               <div class="card-body">
                 <h5 class="card-title">{{ userProfile.name }} <a class="redirect" href="{{ userProfile.html_url }}" target="_blank"><i class="fab fa-github"></i></a></h5>
                 <p class="card-text"><span class="text-muted">Username:</span> {{ userProfile.login }}</p>
-                <p class="card-text"><span class="text-muted">Member since:</span> {{ userProfile.created_at }}</p>
+                <p class="card-text"><span class="text-muted">Member since:</span> {{ userProfile.created_at | dateAgo }}</p>
                 <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{ userProfile.location }}</p>
                 <p *ngIf="userProfile.email" class="card-text"><i class="fas fa-envelope-open-text"></i>{{ userProfile.email }}</p>
                 <p *ngIf="userProfile.company" class="card-text"><i class="fas fa-briefcase"></i> {{ userProfile.company }}</p>
@@ -39,18 +39,6 @@
             </div>
           </div>
         </div>
-
-        <!-- <h2>Profile</h2>
-        <ul class="list-group">
-          <li class="list-group-item"><img class="mx-auto" src="{{ userProfile.avatar_url }}" style="border-radius: 50%"
-              width="100" height="100"></li>
-          <li class="list-group-item">{{ userProfile.name }}</li>
-          <li class="list-group-item">{{ userProfile.login }}</li>
-          <li class="list-group-item">Joined: {{ userProfile.created_at }}</li>
-          <li class="list-group-item">{{ userProfile.location }}</li>
-          <li class="list-group-item">Followers: {{ userProfile.followers }} Following {{ userProfile.following }}</li>
-          <li class="list-group-item" *ngIf="userProfile.company">{{ userProfile.company }}</li>
-        </ul> -->
       </div>
     </div>
     <div class="col-lg-6">
