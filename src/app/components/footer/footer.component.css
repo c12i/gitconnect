@@ -1,0 +1,7 @@
+.footer-copyright > a{
+    color: #000;
+}
+
+.footer-copyright > a:hover{
+    text-decoration: line-through;
+}

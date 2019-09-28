@@ -1,19 +1,46 @@
 <div class="container">
-  <h2>Search</h2>
   <form>
     <div class="form-group" style="display: flex">
-      <input [(ngModel)]="username" (keyup.enter)="searchUser()" type="search" placeholder="search github username" name="username" class="form-control"
-        style="border-right-style: none; border-radius: 0; border-color: #000">
-      <button (click)="searchUser()" type="submit" class="btn btn-outline-dark" style="border-left-style: none; border-radius: 0"><i
-          class="fas fa-search" style="color: #000"></i></button>
+      <input [(ngModel)]="username" (keyup.enter)="searchUser()" type="search" placeholder="search github username"
+        name="username" class="form-control" style="border-right-style: none; border-radius: 0; border-color: #000">
+      <button (click)="searchUser()" type="submit" class="btn btn-outline-dark"
+        style="border-left-style: none; border-radius: 0"><i class="fas fa-search" style="color: #000"></i></button>
     </div>
   </form>
   <hr>
   <div class="row">
     <div class="col-lg-6">
-      
       <div *ngIf="userProfile">
-            <h2>Profile</h2>
+        <h2>Profile</h2>
+        <div class="card no-border mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="{{ userProfile.avatar_url }}" class="card-img" alt="avatar" width="100" height="180">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{ userProfile.name }} <a class="redirect" href="{{ userProfile.html_url }}" target="_blank"><i class="fab fa-github"></i></a></h5>
+                <p class="card-text"><span class="text-muted">Username:</span> {{ userProfile.login }}</p>
+                <p class="card-text"><span class="text-muted">Member since:</span> {{ userProfile.created_at }}</p>
+                <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{ userProfile.location }}</p>
+                <p *ngIf="userProfile.email" class="card-text"><i class="fas fa-envelope-open-text"></i>{{ userProfile.email }}</p>
+                <p *ngIf="userProfile.company" class="card-text"><i class="fas fa-briefcase"></i> {{ userProfile.company }}</p>
+                <div class="badges">
+                  <button type="button" class="btn btn-dark btn-sm space">
+                    Followers <span class="badge badge-light">{{ userProfile.followers }}</span>
+                    <span class="sr-only">unread messages</span>
+                  </button>
+                  <button type="button" class="btn btn-dark btn-sm space">
+                    Following <span class="badge badge-light">{{ userProfile.following }}</span>
+                    <span class="sr-only">unread messages</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <h2>Profile</h2>
         <ul class="list-group">
           <li class="list-group-item"><img class="mx-auto" src="{{ userProfile.avatar_url }}" style="border-radius: 50%"
               width="100" height="100"></li>
@@ -23,14 +50,13 @@
           <li class="list-group-item">{{ userProfile.location }}</li>
           <li class="list-group-item">Followers: {{ userProfile.followers }} Following {{ userProfile.following }}</li>
           <li class="list-group-item" *ngIf="userProfile.company">{{ userProfile.company }}</li>
-        </ul>
+        </ul> -->
       </div>
     </div>
     <div class="col-lg-6">
-      
+      <h2 *ngIf="userProfile">Repositories <span class="badge badge-secondary">{{ userProfile.public_repos }}</span> </h2>
       <div *ngFor="let repo of repos; index as i">
-            <h2>Repos</h2>
-        <div class="card">
+        <div class="card bottom-space">
           <div class="card-body">
             <h3>{{ repo.name }}</h3>
             <p>{{ repo.description }}</p>

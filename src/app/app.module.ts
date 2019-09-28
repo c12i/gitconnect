@@ -10,6 +10,7 @@ import { ProfileService } from './services/profile.service';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
     ProfileComponent,
     LandingPageComponent,
     NavbarComponent,
-    DateAgoPipe
+    DateAgoPipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
