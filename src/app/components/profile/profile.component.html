@@ -1,22 +1,45 @@
 <div class="container">
-  <div *ngIf="userProfile">
-    <img class="mx-auto" src="{{ userProfile.avatar_url }}" alt="" width="100" height="100">
-    <ul class="list-group">
-      <li class="list-group-item">{{ userProfile.name }}</li>
-      <li class="list-group-item">{{ userProfile.login }}</li>
-      <li class="list-group-item">Joined: {{ userProfile.created_at }}</li>
-      <li class="list-group-item">{{ userProfile.location }}</li>
-      <li class="list-group-item">Followers: {{ userProfile.followers }} Following {{ userProfile.following }}</li>
-      <li class="list-group-item" *ngIf="userProfile.company">{{ userProfile.company }}</li>
-    </ul>
-  </div>
-
-  <div *ngFor="let repo of repos">
-    <div class="card">
-        <div class="card-body">
-            <h3></h3>
-            <p></p>
+  <h2>Search</h2>
+  <form>
+    <div class="form-group" style="display: flex">
+      <input [(ngModel)]="username" (keyup.enter)="searchUser()" type="search" placeholder="search github username" name="username" class="form-control"
+        style="border-right-style: none; border-radius: 0; border-color: #000">
+      <button (click)="searchUser()" type="submit" class="btn btn-outline-dark" style="border-left-style: none; border-radius: 0"><i
+          class="fas fa-search" style="color: #000"></i></button>
+    </div>
+  </form>
+  <hr>
+  <div class="row">
+    <div class="col-lg-6">
+      
+      <div *ngIf="userProfile">
+            <h2>Profile</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><img class="mx-auto" src="{{ userProfile.avatar_url }}" style="border-radius: 50%"
+              width="100" height="100"></li>
+          <li class="list-group-item">{{ userProfile.name }}</li>
+          <li class="list-group-item">{{ userProfile.login }}</li>
+          <li class="list-group-item">Joined: {{ userProfile.created_at }}</li>
+          <li class="list-group-item">{{ userProfile.location }}</li>
+          <li class="list-group-item">Followers: {{ userProfile.followers }} Following {{ userProfile.following }}</li>
+          <li class="list-group-item" *ngIf="userProfile.company">{{ userProfile.company }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      
+      <div *ngFor="let repo of repos; index as i">
+            <h2>Repos</h2>
+        <div class="card">
+          <div class="card-body">
+            <h3>{{ repo.name }}</h3>
+            <p>{{ repo.description }}</p>
+            <a href="{{ repo.html_url }}" target="_blank">
+              <p>{{ repo.html_url }}</p>
+            </a>
+          </div>
         </div>
+      </div>
     </div>
   </div>
 </div>
