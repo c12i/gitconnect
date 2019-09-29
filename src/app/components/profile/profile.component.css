@@ -1,31 +1,35 @@
-form{
-    margin-top: 90px;
+form {
+  margin-top: 90px;
 }
 
-.no-border{
-    border-style: none;
+.no-border {
+  border-style: none;
 }
 
-.space{
-    margin-right: 7px;
+.space {
+  margin-right: 7px;
 }
 
-.redirect{
-    color: #393c40;
+.redirect {
+  color: #393c40;
 }
 
-.redirect:hover{
-    color: rgb(248, 211, 0);;
+.redirect:hover {
+  color: rgb(248, 211, 0);
 }
 
-.bottom-space{
-    margin-bottom: 10px;
+.bottom-space {
+  margin-bottom: 10px;
 }
 
-button > .badge{
-    cursor: crosshair;
+button>.badge {
+  cursor: crosshair;
 }
 
-.date{
-    float: right;
+.date {
+  float: right;
+}
+
+.btn-hov:hover {
+  background-color: #fff;
 }

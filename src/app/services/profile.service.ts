@@ -10,10 +10,7 @@ export class ProfileService {
   private clientId = 'Iv1.18248cd1cb3f1f3e';
   private clientSecret = '4b56d3d7aa29934d055e8224e4767c6bc277aec3';
 
-  constructor(private http: HttpClient) {
-    console.log('service is ready');
-    this.username = 'collinsmuriuki';
-  }
+  constructor(private http: HttpClient) {}
 
   getProfileData() {
     return this.http.get(`https://api.github.com/users/${this.username}?${this.clientId}&client_secret=${this.clientSecret}`);

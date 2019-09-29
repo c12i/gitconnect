@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { CardHoverDirective } from './directives/card-hover.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     NavbarComponent,
     DateAgoPipe,
     FooterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CardHoverDirective
   ],
   imports: [
     BrowserModule,

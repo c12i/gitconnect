@@ -1,6 +1,6 @@
 .content {
   text-align: center;
-  margin-top: 250px;
+  margin-top: 230px;
   align-content: center;
   align-items: center;
 }
@@ -18,7 +18,7 @@
   animation: 1s blink step-end infinite;
 }
 
-keyframes "blink" {
+@keyframes blink{
 
   from,
   to {
@@ -42,7 +42,7 @@ keyframes "blink" {
   }
 }
 
-@-webkit-keyframes "blink" {
+@-webkit-keyframes blink {
 
   from,
   to {
@@ -54,7 +54,7 @@ keyframes "blink" {
   }
 }
 
-@-ms-keyframes "blink" {
+@-ms-keyframes blink {
 
   from,
   to {
@@ -66,7 +66,7 @@ keyframes "blink" {
   }
 }
 
-@-o-keyframes "blink" {
+@-o-keyframes blink {
 
   from,
   to {
