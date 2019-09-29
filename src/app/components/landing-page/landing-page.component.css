@@ -1,28 +1,92 @@
 .content {
   text-align: center;
-  margin-top: 200px;
+  margin-top: 250px;
   align-content: center;
   align-items: center;
 }
 
-.content>h1 {
+.effect>h1 {
   font-size: 73px;
   text-align: center;
 }
 
-.content>h1:hover {
-  color: rgb(248, 211, 0);
+.blinking-cursor {
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
 }
 
-.content>button:hover {
+keyframes "blink" {
+
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: black;
+  }
+}
+
+@-moz-keyframes blink {
+
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: black;
+  }
+}
+
+@-webkit-keyframes "blink" {
+
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: black;
+  }
+}
+
+@-ms-keyframes "blink" {
+
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: black;
+  }
+}
+
+@-o-keyframes "blink" {
+
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: black;
+  }
+}
+
+.content>a button:hover {
   background: rgb(248, 211, 0);
   color: #393c40;
 }
 
-.content>button {
+.content>a button {
   border-width: 5px;
 }
 
-.jumbotron{
+.jumbotron {
   background: #fff;
 }
