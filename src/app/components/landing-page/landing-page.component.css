@@ -5,9 +5,28 @@
   align-items: center;
 }
 
+@media screen and (min-width: 601px) {
+  .effect>h1 {
+    font-size: 73px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .effect>h1 {
+    font-size: 40px;
+  }
+}
+
 .effect>h1 {
-  font-size: 73px;
   text-align: center;
+  align-content: center;
+  align-items: center;
+}
+
+.content>h5 {
+  text-align: center;
+  align-content: center;
+  align-items: center;
 }
 
 .blinking-cursor {
@@ -18,7 +37,7 @@
   animation: 1s blink step-end infinite;
 }
 
-@keyframes blink{
+@keyframes blink {
 
   from,
   to {
@@ -85,6 +104,9 @@
 
 .content>a button {
   border-width: 5px;
+  text-align: center;
+  align-content: center;
+  align-items: center;
 }
 
 .jumbotron {
