@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -7,8 +8,8 @@ import { Injectable } from '@angular/core';
 export class ProfileService {
   // to be moved to environment
   private username: string;
-  private clientId = 'Iv1.18248cd1cb3f1f3e';
-  private clientSecret = '4b56d3d7aa29934d055e8224e4767c6bc277aec3';
+  private clientId = environment.clientId;
+  private clientSecret = environment.clientSecret;
 
   constructor(private http: HttpClient) {}
 
