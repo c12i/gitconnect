@@ -1,4 +1,5 @@
 <div class="container">
+  <ng-progress></ng-progress>
   <form>
     <div class="form-group" style="display: flex">
       <input [(ngModel)]="username" (keyup.enter)="searchUser()" type="search" placeholder="search github username"
@@ -40,10 +41,12 @@
                   {{ userProfile.company }}</p>
                 <div class="badges">
                   <button style="color:rgb(248, 211, 0);" type="button" class="btn btn-dark btn-sm space">
-                    Followers <span style="background-color:rgb(248, 211, 0);" class="badge badge-light">{{ userProfile.followers }}</span>
+                    Followers <span style="background-color:rgb(248, 211, 0);"
+                      class="badge badge-light">{{ userProfile.followers }}</span>
                   </button>
                   <button style="color:rgb(248, 211, 0);" type="button" class="btn btn-dark btn-sm space">
-                    Following <span style="background-color:rgb(248, 211, 0);" class="badge badge-light">{{ userProfile.following }}</span>
+                    Following <span style="background-color:rgb(248, 211, 0);"
+                      class="badge badge-light">{{ userProfile.following }}</span>
                   </button>
                 </div>
               </div>
@@ -58,10 +61,13 @@
       <div *ngFor="let repo of repos; index as i">
         <div appCardHover class="card bottom-space">
           <div class="card-body">
-            <h3>{{ repo.name }} <i *ngIf="repo.fork" class="fas fa-code-branch fa-xs"></i> <span style="font-size:12px; float:right; color:rgb(248, 211, 0); background-color: #393c40" class="badge badge-secondary">{{ repo.language }}</span></h3>
+            <h3>{{ repo.name }} <i *ngIf="repo.fork" class="fas fa-code-branch fa-xs"></i> <span
+                style="font-size:12px; float:right; color:rgb(248, 211, 0); background-color: #393c40"
+                class="badge badge-secondary">{{ repo.language }}</span></h3>
             <p>{{ repo.description }}</p>
             <a href="{{ repo.html_url }}" target="_blank">
-              <button style="color:rgb(248, 211, 0);" class="btn btn-dark">view on GitHub <i class="fab fa-github"></i></button>
+              <button style="color:rgb(248, 211, 0);" class="btn btn-dark">view on GitHub <i
+                  class="fab fa-github"></i></button>
             </a>
             <div class="date">
               <small><span class="text-muted">last modified:</span> {{ repo.updated_at | dateAgo }}</small>

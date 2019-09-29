@@ -13,6 +13,8 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CardHoverDirective } from './directives/card-hover.directive';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { CardHoverDirective } from './directives/card-hover.directive';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgProgressModule.forRoot(),
+    NgProgressHttpClientModule
   ],
   providers: [ProfileService],
   bootstrap: [AppComponent]
