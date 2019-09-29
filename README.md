@@ -1,5 +1,5 @@
 # gitconnect.
----
+
 ####  A simple github user search tool.
 ![alt text](src/assets/screencaps/screenshot.jpg)
 
@@ -29,7 +29,7 @@ Here are the features in summary:
 ## Behaviour Driven Development (BDD)
 |Behaviour 	           |    Input 	                 |       Output          |
 |----------------------------------------------|:-----------------------------------:|-----------------------------:|       
-|Page loads, user arrives in the landing page                         |   User clicks, begin search button and is redirected to the search page.             |User can then search github usernames and the profiles of the users as well as their repos is displayed.    |                       |
+|Page loads, user arrives in the landing page, on clicking the begin search button, they are taken to the search page.                        |  The user , once in the search page, can search github usernames on the search box.          | The profiles of the users as well as their repos are displayed upon submission.    |                       |
 
 ## Requirements
 * To run this app on your text editor, you will need the following:
