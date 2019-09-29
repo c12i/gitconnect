@@ -1,12 +1,13 @@
 <div class="container">
   <ng-progress></ng-progress>
-  <form>
+  <form #searchField="ngForm">
     <div class="form-group" style="display: flex">
-      <input [(ngModel)]="username" (keyup.enter)="searchUser()" type="search" placeholder="search github username"
-        name="username" class="form-control" style="border-right-style: none; border-radius: 0; border-color: #000">
+      <input [(ngModel)]="username" #user="ngModel" type="search" placeholder="search github username"
+        name="username" class="form-control" style="border-right-style: none; border-radius: 0; border-color: #000" required>
       <button (click)="searchUser()" type="submit" class="btn btn-outline-dark btn-hov"
         style="border-left-style: none; border-radius: 0"><i class="fas fa-search" style="color: #000"></i></button>
     </div>
+    <small [hidden]="user.untouched" class="form-text" style="color: red; margin-top:0;">this field is required.</small>
   </form>
   <hr class="style-one">
   <div *ngIf="notFound && !userProfile" class="mx-auto">
