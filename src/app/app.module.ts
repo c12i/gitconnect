@@ -11,6 +11,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
 import { FooterComponent } from './components/footer/footer.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FooterComponent } from './components/footer/footer.component';
     LandingPageComponent,
     NavbarComponent,
     DateAgoPipe,
-    FooterComponent
+    FooterComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

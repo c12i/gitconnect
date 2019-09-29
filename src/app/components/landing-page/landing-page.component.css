@@ -1,10 +1,17 @@
 .content {
   text-align: center;
-  margin-top: 250px;
+  margin-top: 200px;
+  align-content: center;
+  align-items: center;
 }
 
 .content>h1 {
   font-size: 73px;
+  text-align: center;
+}
+
+.content>h1:hover {
+  color: rgb(248, 211, 0);
 }
 
 .content>button:hover {
@@ -14,4 +21,8 @@
 
 .content>button {
   border-width: 5px;
+}
+
+.jumbotron{
+  background: #fff;
 }
