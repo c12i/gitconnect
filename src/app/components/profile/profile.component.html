@@ -7,7 +7,7 @@
       <button (click)="searchUser()" type="submit" class="btn btn-outline-dark btn-hov"
         style="border-left-style: none; border-radius: 0"><i class="fas fa-search" style="color: #000"></i></button>
     </div>
-    <small [hidden]="user.untouched" class="form-text" style="color: red; margin-top:0;">this field is required.</small>
+    <small [hidden]="user.untouched || user.valid || userProfile" class="form-text" style="color: red; margin-top:0;">this field is required.</small>
   </form>
   <hr class="style-one">
   <div *ngIf="notFound && !userProfile" class="mx-auto">
