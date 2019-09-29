@@ -11,6 +11,7 @@ export class ProfileComponent implements OnInit {
   userProfile: any;
   repos: any;
   username: string;
+  notFound = false;
 
   constructor(private service: ProfileService) { }
 
@@ -20,7 +21,10 @@ export class ProfileComponent implements OnInit {
       .subscribe(profile => {
         console.log(profile);
         this.userProfile = profile;
+      }, error => {
+        this.notFound = !this.notFound;
       });
+    // clears input field
     this.username = '';
 
     this.service.getRepoData()

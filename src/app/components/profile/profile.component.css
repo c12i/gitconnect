@@ -21,3 +21,11 @@ form{
 .bottom-space{
     margin-bottom: 10px;
 }
+
+button > .badge{
+    cursor: crosshair;
+}
+
+.date{
+    float: right;
+}

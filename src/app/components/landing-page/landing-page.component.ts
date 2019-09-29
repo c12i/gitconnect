@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-landing-page',
+  // tslint:disable-next-line: component-selector
+  selector: 'landing-page',
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.css']
 })

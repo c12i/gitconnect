@@ -1,0 +1,17 @@
+.content {
+  text-align: center;
+  margin-top: 250px;
+}
+
+.content>h1 {
+  font-size: 73px;
+}
+
+.content>button:hover {
+  background: rgb(248, 211, 0);
+  color: #393c40;
+}
+
+.content>button {
+  border-width: 5px;
+}
