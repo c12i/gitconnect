@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  clientId: 'f89f973173ef565e80889ecbb3c5ba46da649013',
+  token: 'f89f973173ef565e80889ecbb3c5ba46da649013',
   url: 'htttps://api.github.com/users/'
 };
 

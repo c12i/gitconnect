@@ -8,24 +8,24 @@ import { Injectable } from '@angular/core';
 export class ProfileService {
   // to be moved to environment
   private username: string;
-  private clientId = environment.clientId;
+  private token = environment.token;
 
   constructor(private http: HttpClient) {}
 
   getProfileData() {
-    return this.http.get(`https://api.github.com/users/${this.username}?${this.clientId}`);
+    return this.http.get(`https://api.github.com/users/${this.username}?${this.token}`);
   }
 
   getRepoData() {
-    return this.http.get(`https://api.github.com/users/${this.username}/repos?${this.clientId}`);
+    return this.http.get(`https://api.github.com/users/${this.username}/repos?${this.token}`);
   }
 
   getFollowers() {
-    return this.http.get(`https://api.github.com/users/${this.username}/followers?${this.clientId}`);
+    return this.http.get(`https://api.github.com/users/${this.username}/followers?${this.token}`);
   }
 
   getFollowing() {
-    return this.http.get(`https://api.github.com/users/${this.username}/following?${this.clientId}`);
+    return this.http.get(`https://api.github.com/users/${this.username}/following?${this.token}`);
   }
 
   updateFields(username: string) {
