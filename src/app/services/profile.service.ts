@@ -9,24 +9,23 @@ export class ProfileService {
   // to be moved to environment
   private username: string;
   private clientId = environment.clientId;
-  private clientSecret = environment.clientSecret;
 
   constructor(private http: HttpClient) {}
 
   getProfileData() {
-    return this.http.get(`https://api.github.com/users/${this.username}?${this.clientId}&client_secret=${this.clientSecret}`);
+    return this.http.get(`https://api.github.com/users/${this.username}?${this.clientId}`);
   }
 
   getRepoData() {
-    return this.http.get(`https://api.github.com/users/${this.username}/repos?${this.clientId}&client_secret=${this.clientSecret}`);
+    return this.http.get(`https://api.github.com/users/${this.username}/repos?${this.clientId}`);
   }
 
   getFollowers() {
-    return this.http.get(`https://api.github.com/users/${this.username}/followers?${this.clientId}&client_secret=${this.clientSecret}`);
+    return this.http.get(`https://api.github.com/users/${this.username}/followers?${this.clientId}`);
   }
 
   getFollowing() {
-    return this.http.get(`https://api.github.com/users/${this.username}/followers?${this.clientId}&client_secret=${this.clientSecret}`);
+    return this.http.get(`https://api.github.com/users/${this.username}/following?${this.clientId}`);
   }
 
   updateFields(username: string) {
