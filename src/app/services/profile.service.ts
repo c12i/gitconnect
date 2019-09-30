@@ -16,10 +16,12 @@ export class ProfileService {
 
   getProfileData() {
     return this.http.get(`https://api.github.com/users/${this.username}?access_token=${this.token}`);
+    // return this.http.get(`https://api.github.com/users/${this.username}?${this.clientId}&client_secret=${this.clientSecret}`);
   }
 
   getRepoData() {
     return this.http.get(`https://api.github.com/users/${this.username}/repos?access_token=${this.token}`);
+    // return this.http.get(`https://api.github.com/users/${this.username}/repos?${this.clientId}&client_secret=${this.clientSecret}`);
   }
 
   getFollowers() {
