@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   token: '4a1222a95ad9d3bf9e52690059e5afaea59e64bc',
-  clientId: '8e8126c48e962570adfd0',
-  clientSecret: 'd02dd6cd5b37e24eb2643807a2be63fd5a2672f80',
+  clientId: '8e8126c48e962570adfd',
+  clientSecret: 'd02dd6cd5b37e24eb2643807a2be63fd5a2672f8',
   url: 'htttps://api.github.com/users/'
 };
 

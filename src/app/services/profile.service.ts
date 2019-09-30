@@ -15,21 +15,13 @@ export class ProfileService {
   constructor(private http: HttpClient) {}
 
   getProfileData() {
-    return this.http.get(`https://api.github.com/users/${this.username}?access_token=${this.token}`);
-    // return this.http.get(`https://api.github.com/users/${this.username}?${this.clientId}&client_secret=${this.clientSecret}`);
+    // return this.http.get(`https://api.github.com/users/${this.username}?access_token=${this.token}`);
+    return this.http.get(`https://api.github.com/users/${this.username}?${this.clientId}&client_secret=${this.clientSecret}`);
   }
 
   getRepoData() {
-    return this.http.get(`https://api.github.com/users/${this.username}/repos?access_token=${this.token}`);
-    // return this.http.get(`https://api.github.com/users/${this.username}/repos?${this.clientId}&client_secret=${this.clientSecret}`);
-  }
-
-  getFollowers() {
-    return this.http.get(`https://api.github.com/users/${this.username}/followers?access_token=${this.token}`);
-  }
-
-  getFollowing() {
-    return this.http.get(`https://api.github.com/users/${this.username}/following?access_token=${this.token}`);
+    // return this.http.get(`https://api.github.com/users/${this.username}/repos?access_token=${this.token}`);
+    return this.http.get(`https://api.github.com/users/${this.username}/repos?${this.clientId}&client_secret=${this.clientSecret}`);
   }
 
   updateFields(username: string) {
