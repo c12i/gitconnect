@@ -33,3 +33,7 @@ button>.badge {
 .btn-hov:hover {
   background-color: #fff;
 }
+
+.sticky-top{
+  top: 80px;
+}
