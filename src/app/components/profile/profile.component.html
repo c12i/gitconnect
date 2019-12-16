@@ -18,7 +18,7 @@
   </div>
   <div class="row">
     <div class="col-lg-6">
-      <div class="sticky-top" *ngIf="userProfile">
+      <div class="sticky-top s-top" *ngIf="userProfile">
         <h2>Profile</h2>
         <div class="card no-border mb-3" style="max-width: 540px;">
           <div class="row no-gutters">
@@ -43,14 +43,14 @@
                 <p *ngIf="userProfile.company" class="card-text"><i class="fas fa-briefcase"></i>
                   {{ userProfile.company }}</p>
                 <div class="badges">
-                  <button style="color:rgb(248, 211, 0);" type="button" class="btn btn-dark btn-sm space">
+                  <a style="color:rgb(248, 211, 0);" class="btn btn-dark btn-sm space">
                     Followers <span style="background-color:rgb(248, 211, 0);"
                       class="badge badge-light">{{ userProfile.followers }}</span>
-                  </button>
-                  <button style="color:rgb(248, 211, 0);" type="button" class="btn btn-dark btn-sm space">
+                  </a>
+                  <a style="color:rgb(248, 211, 0);" class="btn btn-dark btn-sm space">
                     Following <span style="background-color:rgb(248, 211, 0);"
                       class="badge badge-light">{{ userProfile.following }}</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -60,15 +60,16 @@
     </div>
     <div class="col-lg-6">
 
-      <nav *ngIf="userProfile" class="sticky-top">
+      <nav *ngIf="userProfile" class="sticky-top s-top-nav bg-light">
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <a *ngIf="userProfile" class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Repos <span class="badge badge-secondary">{{ userProfile.public_repos }}</span></a>
-          <a *ngIf="userProfile" class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
-          <a *ngIf="userProfile" class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+          <a *ngIf="userProfile" class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#repos" role="tab" aria-controls="nav-home" aria-selected="true">Repos <span class="badge badge-secondary">{{ userProfile.public_repos }}</span></a>
+          <a *ngIf="userProfile" class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#followers" role="tab" aria-controls="nav-profile" aria-selected="false">Followers <span class="badge badge-secondary">{{ userProfile.followers }}</span></a>
+          <a *ngIf="userProfile" class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#following" role="tab" aria-controls="nav-contact" aria-selected="false">Following <span class="badge badge-secondary">{{ userProfile.following }}</span></a>
         </div>
       </nav>
       <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        
+        <div class="tab-pane fade show active" id="repos" role="tabpanel" aria-labelledby="nav-home-tab">
           <div *ngFor="let repo of repos; index as i">
             <div appCardHover class="card bottom-space">
               <div class="card-body">
@@ -87,13 +88,30 @@
             </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+
+        <div class="tab-pane fade" id="followers" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <div *ngFor="let follower of followers">
+            <div style="margin-bottom: 10px;" class="media" appCardHover>
+              <img class="profile-thumb" style="height:60px; width:60px;" src="{{ follower.avatar_url }}" class="mr-3" alt="avatar">
+              <div class="media-body">
+                <a href="{{follower.html_url}}" target="_blank"><h5 class="mt-0">{{ follower.login }}</h5></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="following" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <div *ngFor="let follower of following">
+            <div style="margin-bottom: 10px;" class="media" appCardHover>
+              <img class="profile-thumb" style="height:60px; width:60px;" src="{{ follower.avatar_url }}" class="mr-3" alt="avatar">
+              <div class="media-body">
+                <a href="{{follower.html_url}}" target="_blank"><h5 class="mt-0">{{ follower.login }}</h5></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-
-      
-      
     </div>
   </div>
 </div>

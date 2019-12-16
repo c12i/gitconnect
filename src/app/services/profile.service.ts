@@ -29,7 +29,7 @@ export class ProfileService {
   }
 
   getFollowing() {
-    return this.http.get(`https://api.github.com/users/${this.username}/folowing?${this.clientId}&client_secret=${this.clientSecret}`)
+    return this.http.get(`https://api.github.com/users/${this.username}/following?${this.clientId}&client_secret=${this.clientSecret}`)
   }
 
   updateFields(username: string) {

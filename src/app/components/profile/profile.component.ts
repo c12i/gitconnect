@@ -10,6 +10,8 @@ import { ProfileService } from 'src/app/services/profile.service';
 export class ProfileComponent implements OnInit {
   userProfile: any;
   repos: any;
+  followers: any;
+  following: any;
   username: string;
   notFound = false;
 
@@ -32,6 +34,16 @@ export class ProfileComponent implements OnInit {
         this.repos = repos;
         // console.log(repos);
       });
+
+    this.service.getFollowers()
+      .subscribe(followers => {
+        this.followers = followers;
+      })
+
+    this.service.getFollowing()
+      .subscribe(following => {
+        this.following = following;
+      })
   }
 
   ngOnInit() {

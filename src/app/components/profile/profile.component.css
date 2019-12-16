@@ -34,6 +34,20 @@ button>.badge {
   background-color: #fff;
 }
 
-.sticky-top{
-  top: 80px;
+.s-top{
+  top: 60px;
+}
+
+.s-top-nav{
+  top: 55px;
+}
+
+div>a{
+  color: #393c40;
+}
+
+.profile-thumb{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
 }
