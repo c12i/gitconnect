@@ -59,7 +59,7 @@ Here is a run through of how to set up the application:
             clientSecret: 'YOUR_CLIENTSECRET',
             };
         ```
-    * Anf finally in environment.prod.ts, copy the above code but change **production** key from false to **true**
+    * And finally in environment.prod.ts, copy the above code but change **production** key from false to **true**
 * **Step 5** : Run **`ng serve`** on the terminal for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files
 
 ## Known Bugs
