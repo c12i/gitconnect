@@ -24,6 +24,14 @@ export class ProfileService {
     return this.http.get(`https://api.github.com/users/${this.username}/repos?${this.clientId}&client_secret=${this.clientSecret}`);
   }
 
+  getFollowers() {
+    return this.http.get(`https://api.github.com/users/${this.username}/followers?${this.clientId}&client_secret=${this.clientSecret}`)
+  }
+
+  getFollowing() {
+    return this.http.get(`https://api.github.com/users/${this.username}/folowing?${this.clientId}&client_secret=${this.clientSecret}`)
+  }
+
   updateFields(username: string) {
     this.username = username;
   }
