@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit {
     this.service.updateFields(this.username);
     this.service.getProfileData()
       .subscribe(profile => {
-        console.log(profile);
+        // console.log(profile);
         this.userProfile = profile;
       }, error => {
         this.notFound = !this.notFound;
@@ -30,7 +30,7 @@ export class ProfileComponent implements OnInit {
     this.service.getRepoData()
       .subscribe(repos => {
         this.repos = repos;
-        console.log(repos);
+        // console.log(repos);
       });
   }
 
